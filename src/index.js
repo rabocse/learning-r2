@@ -9,7 +9,7 @@
  */
 
 
-// Check requests for a pre-shared secret
+// Check requests for a pre-shared secret.  // This is not needed since R2 has no egress fee. Also it complicates the solution.
 const hasValidHeader = (request, env) => {
 	return request.headers.get('X-Custom-Auth-Key') === env.AUTH_KEY_SECRET;
   };
@@ -35,7 +35,7 @@ export default {
 	  }
 
 	// If the "X-Custom-Auth-Key" Header was present, then we evaluate the HTTP method.
-	// Kept only the GET for simplicity and as per requirement, but used a case for future use cases.
+	// Kept only the GET for simplicity and as per requirement, but It might be useful in the future.
 	  switch (request.method) {
 	
 		case 'GET':
